@@ -1,18 +1,18 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-#define wifi_ssid "makerspace"
-#define wifi_password "W#z5rdSu31*tZXV7m%"
+#define wifi_ssid "nombre_la_red"
+#define wifi_password "contraseña"
 
-#define mqtt_server "hassio3b1.local"
-#define mqtt_user "admin"
-#define mqtt_password "12341234"
+#define mqtt_server "hassio.local"//utilizar hostname o dirección IP
+#define mqtt_user "admin"//usuario para ingresar al broker
+#define mqtt_password "12341234"//Contraseña para ingresar al broker
 
-#define switch1_topic_sta "hb31/switch1/status"
-#define switch1_topic_com "hb31/switch1/command"
+#define switch1_topic_sta "switch1/status"//El dispositivo MQTT publica para informar de su estado, cada vez que se presente un cambio
+#define switch1_topic_com "switch1/command"//El dipositibo se suscribe para recibir comandos y ejecutarlos
 
-#define switch2_topic_sta "hb31/switch2/status"
-#define switch2_topic_com "hb31/switch2/command"
+#define switch2_topic_sta "switch2/status"
+#define switch2_topic_com "switch2/command"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -30,21 +30,21 @@ void callback(char* topic, byte* payload, unsigned int length) {
   for (int i=0;i<length;i++) {
     payloadS = payloadS + (char)payload[i];
   }
-  Serial.println();
-  Serial.println(topicS);
-  Serial.println(payloadS);
+ // Serial.println();
+  //Serial.println(topicS);
+  //Serial.println(payloadS);
 
   if (topicS.equals(switch1_topic_com)){
     
     if(payloadS.equals("1")){//payloadS.equals("ON") 
       switch1_status = 1;
       switch1_status_bandera = 1;
-      Serial.println("se recibio 1");
+      //Serial.println("se recibio 1");
     }
     if(payloadS.equals("0") ){
       switch1_status = 0;
       switch1_status_bandera = 1;
-      Serial.println("se recibio 0");
+      //Serial.println("se recibio 0");
     }
   }
   else if (topicS.equals(switch2_topic_com)){
@@ -52,16 +52,16 @@ void callback(char* topic, byte* payload, unsigned int length) {
     if(payloadS.equals("1")){//payloadS.equals("ON") 
       switch2_status = 1;
       switch2_status_bandera = 1;
-      Serial.println("se recibio 1");
+     // Serial.println("se recibio 1");
     }
     if(payloadS.equals("0") ){
       switch2_status = 0;
       switch2_status_bandera = 1;
-      Serial.println("se recibio 0");
+      //Serial.println("se recibio 0");
     }
   }
 
-  Serial.println("");
+  //Serial.println("");
 }
 
 void setup() {
@@ -153,11 +153,7 @@ void reconnect() {
   // Loop until we're reconnected
   
   while (!client.connected()) {
-    /*
-    setup_wifi();
-    client.setServer(mqtt_server, 1883);//intento de resolver porque no se reconecta solo 
-    client.setCallback(callback);//mismo intento
-    delay(2);*/
+   
     
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
