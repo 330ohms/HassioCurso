@@ -5,12 +5,12 @@
 #define DHTPIN 5 
 #define DHTTYPE DHT11   // DHT 11
 
-#define wifi_ssid "makerspace"
-#define wifi_password "W#z5rdSu31*tZXV7m%"
+#define wifi_ssid "nombre_de_red"
+#define wifi_password "contraseña_de_red"
 
-#define mqtt_server "hassio3b1.local"
-#define mqtt_user "admin"
-#define mqtt_password "12341234"
+#define mqtt_server "hassio.local"//URL con hostname o IP asignadopor el router
+#define mqtt_user "admin"//usuario servidor MQTT
+#define mqtt_password "12341234"//Contraseña servidor MQTT
 
 #define temperatura_topic "sensor/temperatura"
 #define humedad_topic "sensor/humedad"
