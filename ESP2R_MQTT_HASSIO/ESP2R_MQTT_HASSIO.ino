@@ -21,7 +21,7 @@ bool switch1_status=0;
 bool switch1_status_bandera=0;
 bool switch2_status=0;
 bool switch2_status_bandera=0;
-const int ms = 50;
+const int ms = 20;
 
 void callback(char* topic, byte* payload, unsigned int length) {
   String topicS = topic;
@@ -90,7 +90,7 @@ void loop() {
         Serial.write(0x01);
         Serial.write(0x01);
         Serial.write(0xA2);
-        delay(ms);
+        
       client.publish(switch1_topic_sta, "1");
     }
     else {
@@ -100,7 +100,7 @@ void loop() {
         Serial.write(0x01);
         Serial.write(0x00);
         Serial.write(0xA1);
-        delay(ms); 
+        
       client.publish(switch1_topic_sta, "0");
     }
   }
@@ -114,7 +114,7 @@ void loop() {
         Serial.write(0x02);
         Serial.write(0x01);
         Serial.write(0xA3);
-        delay(ms);
+        
       client.publish(switch2_topic_sta, "1");
     }
     else {
@@ -124,7 +124,7 @@ void loop() {
         Serial.write(0x02);
         Serial.write(0x00);
         Serial.write(0xA2);
-        delay(ms); 
+         
       client.publish(switch2_topic_sta, "0");
     }
   }
