@@ -1,0 +1,73 @@
+
+lock:
+  - platform: mqtt
+    name: puerta_principal
+    state_topic: "croquis/cerradura_principal/status"
+    command_topic: "croquis/cerradura_principal/status" 
+    payload_lock: "LOCK"
+    payload_unlock: "UNLOCK"
+    retain: true
+
+  - platform: mqtt
+    name: puerta_trasera
+    state_topic: "croquis/cerradura_trasera/status"
+    command_topic: "croquis/cerradura_trasera/status" 
+    payload_lock: "LOCK"
+    payload_unlock: "UNLOCK"
+    retain: true
+    
+
+    
+light: 
+  - platform: mqtt
+    name: luz_recamara1
+    state_topic: "croquis/luz_recamara1/status"
+    command_topic: "croquis/luz_recamara1/status"
+    brightness_state_topic: "croquis/luz_recamara1/brightness-status"
+    brightness_command_topic: "croquis/luz_recamara1/brightness-status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
+  - platform: mqtt
+    name: luz_recamara2
+    state_topic: "croquis/luz_recamara2/status"
+    command_topic: "croquis/luz_recamara2/status"
+    brightness_state_topic: "croquis/luz_recamara2/brightness-status"
+    brightness_command_topic: "croquis/luz_recamara2/brightness-status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
+  - platform: mqtt
+    name: luz_baño
+    state_topic: "croquis/luz_bano/status"
+    command_topic: "croquis/luz_bano/status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: luz_sala
+    state_topic: "croquis/luz_sala/status"
+    command_topic: "croquis/luz_sala/status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
+  - platform: mqtt
+    name: luz_cocina
+    state_topic: "croquis/luz_cocina/status"
+    command_topic: "croquis/luz_cocina/status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: luz_comedor
+    state_topic: "croquis/luz_comedor/status"
+    command_topic: "croquis/luz_comedor/status" 
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    
