@@ -86,22 +86,24 @@ void loop() {
     if (switch1_status) {
       //digitalWrite(switch1_pin,1);
       //turn relay 1 on
+      client.publish(switch1_topic_sta, "1");
         Serial.write(0xA0);
         Serial.write(0x01);
         Serial.write(0x01);
         Serial.write(0xA2);
         
-      client.publish(switch1_topic_sta, "1");
+      
     }
     else {
       //digitalWrite(switch1_pin,0);
       //turn relay 1 off
+      client.publish(switch1_topic_sta, "0");
         Serial.write(0xA0);
         Serial.write(0x01);
         Serial.write(0x00);
         Serial.write(0xA1);
         
-      client.publish(switch1_topic_sta, "0");
+      
     }
   }
   if(switch2_status_bandera == 1){
@@ -110,22 +112,24 @@ void loop() {
     if (switch2_status) {
       //digitalWrite(switch1_pin,1);
       //turn relay 2 on
+      client.publish(switch2_topic_sta, "1");
         Serial.write(0xA0);
         Serial.write(0x02);
         Serial.write(0x01);
         Serial.write(0xA3);
         
-      client.publish(switch2_topic_sta, "1");
+      
     }
     else {
       //digitalWrite(switch1_pin,0);
       //turn relay 2 off
+      client.publish(switch2_topic_sta, "0");
         Serial.write(0xA0);
         Serial.write(0x02);
         Serial.write(0x00);
         Serial.write(0xA2);
          
-      client.publish(switch2_topic_sta, "0");
+      
     }
   }
     
