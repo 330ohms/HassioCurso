@@ -1,0 +1,111 @@
+elements:
+  - title: Apagar Luces
+    type: service-button
+    service: homeassistant.turn_off
+    service_data:
+      entity_id: group.all_lights
+    style:
+      top: 90%
+      left: 45%
+  - title: Luz Recamara 1
+    type: state-icon
+    entity: light.luz_recamara1
+    tap_action:
+      action: toggle
+    style:
+      top: 15%
+      left: 27%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Luz Recamara 2
+    type: state-icon
+    entity: light.luz_recamara2
+    tap_action:
+      action: toggle
+    style:
+      top: 15%
+      left: 61%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Luz Sala
+    type: state-icon
+    entity: light.luz_sala
+    tap_action:
+      action: toggle
+    style:
+      top: 50%
+      left: 42%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Luz Baño
+    type: state-icon
+    entity: light.luz_bano
+    tap_action:
+      action: toggle
+    style:
+      top: 36%
+      left: 83%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Luz Cocina
+    type: state-icon
+    entity: light.luz_cocina
+    tap_action:
+      action: toggle
+    style:
+      top: 58%
+      left: 79%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Luz Comedor
+    type: state-icon
+    entity: light.luz_comedor
+    tap_action:
+      action: toggle
+    style:
+      top: 78%
+      left: 65%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Contacto Refrigerador
+    type: state-icon
+    entity: switch.mqttswitch1
+    tap_action:
+      action: toggle
+    style:
+      top: 52%
+      left: 64%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Puerta Pincipal
+    type: state-icon
+    entity: lock.puerta_principal
+    tap_action:
+      action: toggle
+    style:
+      top: 35%
+      left: 3%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+  - title: Puerta Trasera
+    type: state-icon
+    entity: lock.puerta_trasera
+    tap_action:
+      action: toggle
+    style:
+      top: 87%
+      left: 60%
+      font-size: 17px
+      '--iron-icon-height': 38px
+      '--iron-icon-width': 38px
+image: >-
+  https://static1.squarespace.com/static/5445df19e4b026d1c3c87459/t/583dff67e4fcb5082fef3797/1480458122237/
+type: picture-elements
