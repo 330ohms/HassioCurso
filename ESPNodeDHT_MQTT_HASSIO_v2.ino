@@ -8,7 +8,7 @@
 #define wifi_ssid "makerspace"
 #define wifi_password "CursoDom"
 
-#define mqtt_server "192.168.15.84"
+#define mqtt_server "ingresa_tu_ip"
 #define mqtt_user "admin"
 #define mqtt_password "12341234"
 
@@ -48,9 +48,8 @@ void loop() {
   Serial.println("");
 
 
-  if(contador > 300 ){
+  if(contador > 30000 ){
   client.publish(temperatura_topic, String(t).c_str());
-  delay(10);
   client.publish(humedad_topic, String(h).c_str());
   contador=0;
   }
